@@ -60,7 +60,11 @@ Proyek ini dibangun dengan menggunakan serangkaian teknologi dan tools modern ya
  * Desain Responsif Penuh: Tampilan website dapat beradaptasi dengan baik di berbagai ukuran layar, mulai dari desktop, tablet, hingga mobile.
  <br>
  * Mode Terang & Gelap (Dark Mode): Dilengkapi dengan tombol toggle yang memungkinkan pengguna memilih tema tampilan sesuai preferensi. Pilihan tema akan tersimpan di perangkat pengguna.
+ <br>
  * Navigasi "Sticky" & Aktif: Navbar akan selalu menempel di bagian atas saat halaman di-scroll, dan tautan akan menyorot seksi yang sedang aktif.
+ <br>
  * Interaktivitas Halus: Menggunakan transisi CSS untuk memberikan pengalaman pengguna yang lebih mulus dan modern.
+ <br>
  * Formulir Kontak Fungsional: Terintegrasi langsung dengan Netlify Forms untuk menerima pesan dari pengunjung.
+ <br>
 Terima kasih telah mengunjungi repositori ini! Jangan ragu untuk memberikan masukan atau terhubung dengan saya melalui kontak yang tersedia di website.
