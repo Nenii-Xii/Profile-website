@@ -14,28 +14,51 @@ Anda dapat melihat hasil akhir dari proyek ini yang sudah di-deploy secara onlin
 </div>
 <br>
 👤 Inforation Dev.
+<br>
  * Nama: NENI GALUH PUTRI ANYELER
+ <br>
  * NIM: 24120410007
+ <br>
  * Program Studi: Sistem dan Teknologi Informasi (Information System and Technology)
+ <br>
  * Universitas: Universitas Cakrawala
+ <br>
 🎯 Tujuan Proyek
+<br>
 Tujuan utama dari pembuatan website portofolio ini adalah untuk menciptakan sebuah identitas digital yang profesional dan komprehensif. Website ini berfungsi sebagai:
+<br>
  * Kartu Nama Digital: Sebuah platform terpusat untuk menampilkan profil, latar belakang pendidikan, dan pengalaman kerja kepada rekruter, kolega, dan kolaborator potensial.
+ <br>
  * Pameran Keterampilan: Menunjukkan secara visual dan praktis kemampuan dalam pengembangan web, mulai dari desain UI/UX hingga implementasi kode.
+ <br>
  * Pembuktian Konsep: Menjadi bukti nyata dari penerapan teknologi web modern seperti React dan Tailwind CSS dalam sebuah proyek yang fungsional dan estetis.
+ <br>
  * Media Personal Branding: Membangun citra profesional yang kuat di dunia digital.
+ <br>
 🛠️ Teknologi & Tools yang Digunakan
+<br>
 Proyek ini dibangun dengan menggunakan serangkaian teknologi dan tools modern yang umum digunakan di industri:
+<br>
  * React.js: Sebagai library JavaScript utama untuk membangun antarmuka pengguna yang interaktif dan berbasis komponen.
+ <br>
  * Tailwind CSS: Sebuah framework CSS utility-first untuk mempercepat proses styling dan menciptakan desain yang konsisten dan responsif.
+ <br>
  * HTML5 & CSS3: Fondasi dasar untuk struktur dan gaya kustom, termasuk animasi dan variabel.
+ <br>
  * JavaScript (ES6+): Digunakan untuk menangani logika interaktif seperti dark mode dan navigasi.
+ <br>
  * Vite: Sebagai build tool modern yang memberikan pengalaman pengembangan yang sangat cepat.
- * Figma: Digunakan pada tahap awal untuk merancang desain antarmuka (UI) dan pengalaman pengguna (UX).
+ <br>
+ * Figma: Digunakan pada tahap awal untuk merancang desain antarmuka (UI) dan pengalaman pengguna (UX). .[https://www.figma.com/proto/T0Bb4oM2Vu0b3j0XeAhekS/MyProfile-Website?node-id=125-11&starting-point-node-id=125%3A11&t=xIxOC3hVCw4scLk7-1].
+ <br>
  * Netlify: Platform untuk melakukan deployment dan hosting website sehingga dapat diakses secara online.
+ <br>
  * GitHub: Sebagai platform untuk manajemen versi kode dan kolaborasi.
+ <br>
 🚀 Fitur Unggulan
+<br>
  * Desain Responsif Penuh: Tampilan website dapat beradaptasi dengan baik di berbagai ukuran layar, mulai dari desktop, tablet, hingga mobile.
+ <br>
  * Mode Terang & Gelap (Dark Mode): Dilengkapi dengan tombol toggle yang memungkinkan pengguna memilih tema tampilan sesuai preferensi. Pilihan tema akan tersimpan di perangkat pengguna.
  * Navigasi "Sticky" & Aktif: Navbar akan selalu menempel di bagian atas saat halaman di-scroll, dan tautan akan menyorot seksi yang sedang aktif.
  * Interaktivitas Halus: Menggunakan transisi CSS untuk memberikan pengalaman pengguna yang lebih mulus dan modern.
