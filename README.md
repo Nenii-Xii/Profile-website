@@ -10,7 +10,7 @@ Anda dapat melihat hasil akhir dari proyek ini yang sudah di-deploy secara onlin
 ➡️ [https://nenianyeler.netlify.app/#home]
 <br>
 <div align="center">
-<img src="https://i.imgur.com/8i9YyI2.png" alt="Tampilan Screenshot Portofolio" width="700"/>
+<img src="assets.profile/Screenshot_20250928_235608_com_android_chrome_ChromeTabbedActivity.jpg" alt="Tampilan Screenshot Portofolio" width="700"/>
 </div>
 <br>
 👤 Inforation Dev.
