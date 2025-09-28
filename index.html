@@ -5,28 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neni Galuh Putri - Portfolio</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script>
-        // Script untuk menerapkan tema gelap dari localStorage sebelum halaman dimuat
+        // Memeriksa preferensi tema gelap dari localStorage atau sistem
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
         }
     </script>
 
     <style>
-        /* Menggunakan Poppins sebagai font utama untuk seluruh halaman */
+        /* Menggunakan Poppins sebagai font utama */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #FDFEFF;
@@ -36,7 +31,7 @@
             background-color: #0D1117; /* Warna latar gelap seperti GitHub */
         }
 
-        /* Custom colors from your request */
+        /* Variabel CSS untuk warna */
         :root {
             --main-blue: #3149BA;
             --accent-orange: #FFAA9C;
@@ -46,29 +41,28 @@
         .text-main-blue { color: var(--main-blue); }
         .text-accent-orange { color: var(--accent-orange); }
 
+        /* Animasi fade-in */
         .animated-title {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 0.5s;
-}
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Keyframes untuk animasi muncul dari bawah */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-        /* Style untuk garis bawah navigasi aktif */
+        /* Garis bawah untuk navigasi aktif */
         .nav-link-active {
             color: var(--main-blue);
             border-bottom: 2px solid var(--accent-orange);
             padding-bottom: 4px;
         }
         .dark .nav-link-active {
-            color: #3149BA; /* Warna biru tua untuk dark mode */
+            color: #3149BA;
         }
         
         /* Styling untuk timeline */
@@ -79,7 +73,7 @@
         .timeline-item::after { content: ''; position: absolute; left: 0; top: 0.5rem; width: 1rem; height: 1rem; border-radius: 9999px; background-color: white; border: 3px solid var(--main-blue); }
         .dark .timeline-item::after { background-color: #1F2937; border-color: #A5B4FC; }
 
-        /* === DARK MODE TOGGLE FANCY SWITCH (UPDATED) === */
+        /* Dark mode toggle switch */
         #fancy-toggle {
             position: relative;
             width: 70px;
@@ -90,9 +84,7 @@
             transition: background-color 0.3s ease-in-out;
             overflow: hidden;
         }
-        .dark #fancy-toggle {
-            background-color: #1f2937; /* gray-800 */
-        }
+        .dark #fancy-toggle { background-color: #1f2937; /* gray-800 */ }
         #fancy-toggle .thumb {
             position: absolute;
             top: 4px;
@@ -111,76 +103,52 @@
             transform: translateX(34px);
             background-image: url('https://cdn-icons-png.flaticon.com/512/547/547433.png');
         }
-        #fancy-toggle .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            background-image: radial-gradient(white 1px, transparent 1px);
-            background-size: 8px 8px;
-        }
-        .dark #fancy-toggle .stars {
-            opacity: 0.7;
-        }
     </style>
 </head>
 <body class="text-gray-800 dark:text-gray-300">
 
-    <!-- Main Container -->
     <div class="container mx-auto px-6 md:px-12">
 
-        <!-- 1. Navbar (UPDATED: Made sticky with FANCY Theme Toggle) -->
         <nav id="navbar" class="sticky top-0 z-50 flex justify-between items-center py-4 bg-white/80 dark:bg-[#0D1117]/80 backdrop-blur-sm shadow-sm">
             <a href="#home" class="text-2xl font-bold text-main-blue dark:text-blue-400 pl-2">Nenii</a>
             
-            <!-- Desktop Menu & Theme Toggle -->
             <div class="flex items-center">
                 <div class="hidden md:flex items-center space-x-10 text-sm font-medium">
                     <a href="#home" class="nav-link-active">Home</a>
-                    <a href="#about-me" class="nav-link-active">About Me</a>
-                    <a href="#experience" class="nav-link-active">Experience</a>
-                    <a href="#contact-me" class="nav-link-active">Contact Me</a>
+                    <a href="#about-me" class="nav-link">About Me</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#contact-me" class="nav-link">Contact Me</a>
                 </div>
-                <!-- Replaced old toggle with new fancy toggle -->
                 <div id="fancy-toggle" class="ml-4">
                     <div class="thumb"></div>
-                    <div class="stars"></div>
                 </div>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-2xl z-30">
                 <i class="fas fa-bars"></i>
             </button>
 
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-white dark:bg-[#0D1117] z-20">
                 <div class="flex flex-col items-center justify-center h-full space-y-8 text-lg">
-                    <a href="#home" class="hover:text-main-blue dark:hover:text-accent-orange transition">Home</a>
-                    <a href="#about-me" class="hover:text-main-blue dark:hover:text-accent-orange transition">About Me</a>
-                    <a href="#experience" class="hover:text-main-blue dark:hover:text-accent-orange transition">Experience</a>
-                    <a href="#contact-me" class="hover:text-main-blue dark:hover:text-accent-orange transition">Contact Me</a>
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#about-me" class="mobile-nav-link">About Me</a>
+                    <a href="#experience" class="mobile-nav-link">Experience</a>
+                    <a href="#contact-me" class="mobile-nav-link">Contact Me</a>
                 </div>
             </div>
         </nav>
 
-        <!-- 2. Hero Section (Home) -->
         <header id="home" class="py-16 md:py-24">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Left Column: Text -->
                 <div class="relative text-center md:text-left">
                     <h1 class="animated-title md:text-[65px] leading-tight font-semibold">
                         <span class="text-main-blue dark:text-blue-400">NENI </span><span class="font-light text-accent-orange">GALUH </span><span class="text-main-blue dark:text-blue-400">PUTRI</span>
                     </h1>
                     <p class="animated-title md:text-[65px] font-thin text-accent-orange mt-2">ANYELER</p>
-                    <p class="animated-title text-lg-#FFAA9C font-semibold mt-8 ">Engineering Admin Support | Student of Information System and Technology at Cakrawala University</p>
+                    <p class="animated-title text-accent-orange font-semibold mt-8 ">Engineering Admin Support | Student of Information System and Technology at Cakrawala University</p>
                     
                     <div class="bg-main-blue text-white p-6 rounded-lg mt-8 max-w-md mx-auto md:mx-0">
-                        <p class="animated-title eading-relaxed">I am a passionate university student with hands-on experience in technical administration. With a background in Computer and Network Engineering, I combine meticulous operational management with technical understanding to support the efficiency and workflow of the engineering team.</p>
+                        <p class="animated-title leading-relaxed">I am a passionate university student with hands-on experience in technical administration. With a background in Computer and Network Engineering, I combine meticulous operational management with technical understanding to support the efficiency and workflow of the engineering team.</p>
                     </div>
 
                     <div class="flex items-center justify-center md:justify-start space-x-4 mt-6">
@@ -189,18 +157,14 @@
                         <a href="https://www.linkedin.com/in/neni-galuh-putri-anyeler-05b559372/" class="text-2xl text-main-blue dark:text-blue-400 hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
                     </div>
 
-                    <a 
-  href="assets.profile/CV. NeniAnyelir.pdf" 
-  download 
-  class="inline-block text-center mt-8 animate-bounce">
-  <span class="block bg-main-blue text-white px-2 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-800 dark:hover:bg-blue-600">
-    My CV?
-  </span>
-  <span class="text-xs text-gray-500 dark:text-gray-400">Click on me!</span>
-</a>
+                    <a href="assets.profile/CV. NeniAnyelir.pdf" download class="inline-block text-center mt-8 animate-bounce">
+                        <span class="block bg-main-blue text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-800 dark:hover:bg-blue-600">
+                            My CV?
+                        </span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400">Click on me!</span>
+                    </a>
                 </div>
                 
-                <!-- Right Column: Illustration -->
                 <div class="hidden md:block relative">
                     <img src="assets.profile/hero1.png.png" alt="Illustration of a woman working on a computer" class="animated-title z-10 dark:opacity-80">
                     <div class="absolute w-40 h-40 bg-main-blue/20 rounded-full -top-10 -right-10"></div>
@@ -209,7 +173,6 @@
             </div>
         </header>
 
-        <!-- 3. About Me & Experience -->
         <main>
             <section id="about-me" class="py-16 md:py-24">
                 <div class="grid md:grid-cols-12 gap-12">
@@ -245,104 +208,90 @@
                     </div>
                     
                     <div class="md:col-span-5 mt-12 md:mt-0">
-  <div class="bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 p-8 rounded-lg shadow-lg sticky top-24">
-    <h2 class="text-3xl font-bold text-main-blue dark:text-blue-400 mb-6">Skills</h2>
-    <div class="space-y-6">
-      <div>
-        <h4 class="font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-3">Administration & Organization</h4>
-        <p class="text-sm text-gray-700 dark:text-gray-300">
-          Data Management, Asset Management, Meeting Minutes, Microsoft Office Suite (Word, Excel)
-        </p>
-      </div>
-      <div>
-        <h4 class="font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-3">Technical</h4>
-        <p class="text-sm text-gray-700 dark:text-gray-300">
-          Computer Network Basics, Software & OS Installation, Hardware Troubleshooting, Technical Support
-        </p>
-      </div>
-      <div>
-        <h4 class="font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-3">Soft Skills</h4>
-        <p class="text-sm text-gray-700 dark:text-gray-300">
-          Attention to Detail, Time Management, Effective Communication, Adaptability
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
+                        <div class="bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 p-8 rounded-lg shadow-lg sticky top-24">
+                            <h2 class="text-3xl font-bold text-main-blue dark:text-blue-400 mb-6">Skills</h2>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-3">Administration & Organization</h4>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                                        Data Management, Asset Management, Meeting Minutes, Microsoft Office Suite (Word, Excel)
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-3">Technical</h4>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                                        Computer Network Basics, Software & OS Installation, Hardware Troubleshooting, Technical Support
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-3">Soft Skills</h4>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                                        Attention to Detail, Time Management, Effective Communication, Adaptability
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- 4. Contact Me -->
-            <div class="w-full bg-main-blue text-white p-8 md:p-16 rounded-xl relative">
-    
-    <h2 class="absolute top-8 left-8 text-3xl font-bold text-white/50">Contact Me</h2>
-
-    <form name="contact" method="POST" data-netlify="true" netlify>
-        <div class="grid md:grid-cols-2 gap-x-16 pt-12">
-
-            <div class="space-y-6">
-                <div class="grid grid-cols-3 items-center gap-4">
-                    <label for="name" class="text-left text-gray-300">Name :</label>
-                    <input type="text" id="name" name="name" placeholder="Who are you?" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
+            <section id="contact-me">
+                <div class="w-full bg-main-blue text-white p-8 md:p-16 rounded-xl relative">
+                    <h2 class="absolute top-8 left-8 text-3xl font-bold text-white/50">Contact Me</h2>
+                    <form name="contact" method="POST" data-netlify="true" netlify>
+                        <div class="grid md:grid-cols-2 gap-x-16 pt-12">
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-3 items-center gap-4">
+                                    <label for="name" class="text-left text-gray-300">Name :</label>
+                                    <input type="text" id="name" name="name" placeholder="Who are you?" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
+                                </div>
+                                <div class="grid grid-cols-3 items-center gap-4">
+                                    <label for="email" class="text-left text-gray-300">E-mail :</label>
+                                    <input type="email" id="email" name="email" placeholder="I'll reply to you" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
+                                </div>
+                                <div class="grid grid-cols-3 items-center gap-4">
+                                    <label for="subject" class="text-left text-gray-300">Subject :</label>
+                                    <input type="text" id="subject" name="subject" placeholder="About What?" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
+                                </div>
+                                <div class="grid grid-cols-3 items-center gap-4">
+                                    <label for="whatsapp" class="text-left text-gray-300">WhatsApp Number :</label>
+                                    <input type="text" id="whatsapp" name="whatsapp" placeholder="08XX...?" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
+                                </div>
+                            </div>
+                            <div class="flex flex-col mt-8 md:mt-0">
+                                <p class="text-gray-300 mb-4">What do you think of me :</p>
+                                <div class="relative flex-grow">
+                                    <textarea name="message" placeholder="How can I help you?..." rows="8" class="w-full h-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white resize-none"></textarea>
+                                    <img src="assets.profile/file_00000000c9b0622fb4e8f6ba1e4f56a5.png" alt="Contact Illustration" class="absolute top-1/2 right-8 -translate-y-1/2 w-32 md:w-40 h-auto opacity-50 pointer-events-none">
+                                </div>
+                                <button type="submit" class="w-full mt-4 bg-white text-main-blue font-bold py-3 rounded-lg hover:bg-gray-200 transition flex items-center justify-center space-x-2">
+                                    <span>Sending...</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="grid grid-cols-3 items-center gap-4">
-                    <label for="email" class="text-left text-gray-300">E-mail :</label>
-                    <input type="email" id="email" name="email" placeholder="I'll reply to you" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
-                </div>
-
-                <div class="grid grid-cols-3 items-center gap-4">
-                    <label for="subject" class="text-left text-gray-300">Subject :</label>
-                    <input type="text" id="subject" name="subject" placeholder="About What?" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
-                </div>
-
-                <div class="grid grid-cols-3 items-center gap-4">
-                    <label for="whatsapp" class="text-left text-gray-300">WhatsApp Number :</label>
-                    <input type="text" id="whatsapp" name="whatsapp" placeholder="08XX...?" class="col-span-2 w-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white">
-                </div>
-            </div>
-
-            <div class="flex flex-col mt-8 md:mt-0">
-                <p class="text-gray-300 mb-4">What do you think of me :</p>
-                
-                <div class="relative flex-grow">
-                    <textarea name="message" placeholder="How can I help you?..." rows="8" class="w-full h-full p-3 rounded-lg bg-white/10 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white text-white resize-none"></textarea>
-                    
-                    <img src="assets.profile/file_00000000c9b0622fb4e8f6ba1e4f56a5.png" alt="Contact Illustration" class="absolute top-1/2 right-8 -translate-y-1/2 w-32 md:w-40 h-auto opacity-50 pointer-events-none">
-                </div>
-                
-                <button type="submit" class="w-full mt-4 bg-white text-main-blue font-bold py-3 rounded-lg hover:bg-gray-200 transition flex items-center justify-center space-x-2">
-                    <span>Sending...</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-
-        </div>
-    </form>
-</div>
-
-
-                    <p class="text-center poppins mt-20 text-#FFAA9C">"Success does not come to us, we must pursue it with hard work and perseverance."</p>
-                    
+                <div class="text-center mt-20">
+                    <p class="text-accent-orange">"Success does not come to us, we must pursue it with hard work and perseverance."</p>
                     <div class="flex items-center justify-center space-x-4 mt-4">
-                        <a href="https://www.instagram.com/ne.niie/" class="text-2xl text-#FFAA9C dark:text-white hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/Nenii-Xii/Profile-website" class="text-2xl text-#FFAA9C dark:text-white hover:scale-110 transition"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/neni-galuh-putri-anyeler-05b559372/" class="text-2xl text-#FFAA9C dark:text-white hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/ne.niie/" class="text-2xl text-accent-orange dark:text-white hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Nenii-Xii/Profile-website" class="text-2xl text-accent-orange dark:text-white hover:scale-110 transition"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/neni-galuh-putri-anyeler-05b559372/" class="text-2xl text-accent-orange dark:text-white hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </section>
         </main>
     </div>
 
-    <footer class="bg-main-blue text-center py-4">
+    <footer class="bg-main-blue text-center py-4 mt-20">
         <p class="text-sm text-white">&copy; 2025 - Created by Neni Galuh Putri Anyeler</p>
     </footer>
 
     <script>
-        // SCRIPT UNTUK SEMUA FUNGSI
         document.addEventListener('DOMContentLoaded', () => {
-            // FANCY DARK MODE TOGGLE (UPDATED)
+            // SCRIPT DARK MODE TOGGLE
             const toggleSwitch = document.getElementById('fancy-toggle');
             const root = document.documentElement;
             
@@ -351,7 +300,7 @@
                 localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
             });
 
-            // SCRIPT UNTUK MENU MOBILE
+            // SCRIPT MENU MOBILE
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileNavLinks = mobileMenu.querySelectorAll('a');
@@ -362,40 +311,25 @@
                 icon.classList.toggle('fa-bars');
                 icon.classList.toggle('fa-times');
             }
-
             menuBtn.addEventListener('click', toggleMenu);
+            mobileNavLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
-
-            // SCRIPT UNTUK NAVIGASI AKTIF SAAT SCROLL (FIXED)
+            // SCRIPT NAVIGASI AKTIF SAAT SCROLL
             const sections = document.querySelectorAll('section, header');
-            const desktopNavLinks = document.querySelectorAll('#navbar .hidden a');
+            const navLinks = document.querySelectorAll('#navbar .hidden a');
 
             window.addEventListener('scroll', () => {
-                let current = '';
+                let currentSection = '';
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 150) {
-                        current = section.getAttribute('id');
+                    const sectionTop = section.offsetTop - 150; // Offset untuk akurasi
+                    if (window.pageYOffset >= sectionTop) {
+                        currentSection = section.getAttribute('id');
                     }
                 });
                 
-                const expSection = document.getElementById('experience');
-                if(pageYOffset >= expSection.offsetTop - 150) {
-                    current = 'experience';
-                }
-
-                desktopNavLinks.forEach(link => {
+                navLinks.forEach(link => {
                     link.classList.remove('nav-link-active');
-                    const linkHref = link.getAttribute('href').substring(1);
-                    
-                    if (linkHref === 'experience' && current === 'experience') {
-                        link.classList.add('nav-link-active');
-                    } else if (linkHref === 'about-me' && (current === 'about-me')) {
-                         link.classList.add('nav-link-active');
-                    } else if (linkHref === current && linkHref !== 'experience' && linkHref !== 'about-me') {
+                    if (link.getAttribute('href').substring(1) === currentSection) {
                         link.classList.add('nav-link-active');
                     }
                 });
